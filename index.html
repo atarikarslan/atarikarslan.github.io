@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarik Arslan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f9f7f4;
+    --surface: #f2efe9;
+    --ink: #1a1915;
+    --ink-2: #5a5750;
+    --ink-3: #9a9590;
+    --accent: #c17f4a;
+    --accent-light: #e8d5bf;
+    --border: #e0dbd3;
+    --serif: 'Lora', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--ink-2);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+
+  /* PAGE SECTIONS */
+  section { display: none; padding: 64px 48px; max-width: 720px; margin: 0 auto; }
+  section.active { display: block; }
+
+  /* HERO */
+  .hero { padding-top: 80px; padding-bottom: 80px; }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .hero h1 em { font-style: italic; color: var(--ink-2); }
+  .hero-bio {
+    font-size: 17px;
+    color: var(--ink-2);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 40px;
+  }
+  .hero-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    padding: 10px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--ink-2); color: var(--ink); }
+
+  .divider {
+    width: 40px; height: 1px;
+    background: var(--accent-light);
+    margin: 48px 0;
+  }
+
+  /* ABOUT */
+  .about h2 {
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .about-text { font-size: 17px; color: var(--ink-2); line-height: 1.85; margin-bottom: 20px; }
+  .about-text strong { color: var(--ink); font-weight: 500; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--ink-2);
+  }
+
+  /* BLOG */
+  .blog h2 {
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 36px;
+  }
+  .post-list { display: flex; flex-direction: column; gap: 0; }
+  .post-item {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .post-item:first-child { border-top: 1px solid var(--border); }
+  .post-item:hover .post-title { color: var(--accent); }
+  .post-date {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    min-width: 80px;
+  }
+  .post-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+    transition: color 0.15s;
+  }
+  .post-arrow {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-3);
+    transition: transform 0.15s;
+  }
+  .post-item:hover .post-arrow { transform: translateX(4px); color: var(--accent); }
+
+  /* POST VIEW */
+  .post-view { display: none; padding: 64px 48px; max-width: 720px; margin: 0 auto; }
+  .post-view.active { display: block; }
+  .post-back {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 48px;
+    transition: color 0.15s;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+  .post-back:hover { color: var(--accent); }
+  .post-view .post-date-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .post-view h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .post-body { font-size: 17px; color: var(--ink-2); line-height: 1.9; }
+  .post-body p { margin-bottom: 24px; }
+  .post-body strong { color: var(--ink); font-weight: 500; }
+  .post-body em { font-style: italic; }
+  .post-body code {
+    font-family: var(--mono);
+    font-size: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 2px;
+    color: var(--accent);
+  }
+
+  /* PROJECTS */
+  .projects h2 {
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 36px;
+  }
+  .project-grid { display: flex; flex-direction: column; gap: 20px; }
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 28px 32px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .project-card:hover { border-color: var(--accent-light); transform: translateY(-1px); }
+  .project-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+  .project-name { font-size: 17px; font-weight: 500; color: var(--ink); }
+  .project-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 2px;
+    background: var(--accent-light);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .project-desc { font-size: 15px; color: var(--ink-2); line-height: 1.7; margin-bottom: 16px; }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+  .stack-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--ink-3);
+  }
+
+  /* CONTACT */
+  .contact h2 {
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+  .contact-intro { font-size: 17px; color: var(--ink-2); line-height: 1.85; margin-bottom: 40px; max-width: 480px; }
+  .contact-links { display: flex; flex-direction: column; gap: 0; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .contact-link:first-child { border-top: 1px solid var(--border); }
+  .contact-link:hover .cl-label { color: var(--accent); }
+  .cl-platform {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    min-width: 72px;
+  }
+  .cl-label { font-size: 15px; color: var(--ink); transition: color 0.15s; }
+  .cl-arrow { margin-left: auto; font-size: 14px; color: var(--ink-3); }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 20px; }
+    section { padding: 48px 24px; }
+    .post-view { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo" onclick="showSection('home')">ta<span>.</span>online</span>
+  <div class="nav-links">
+    <a href="#" onclick="showSection('home'); return false;" id="nav-home" class="active">home</a>
+    <a href="#" onclick="showSection('about'); return false;" id="nav-about">about</a>
+    <a href="#" onclick="showSection('blog'); return false;" id="nav-blog">blog</a>
+    <a href="#" onclick="showSection('projects'); return false;" id="nav-projects">projects</a>
+    <a href="#" onclick="showSection('contact'); return false;" id="nav-contact">contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section class="hero active" id="sec-home">
+  <div class="hero-eyebrow">software developer · student</div>
+  <h1>Hi, I'm<br><em>Tarik Arslan.</em></h1>
+  <p class="hero-bio">
+    I build things with code and write about what I learn along the way. Currently studying and exploring the space where software meets real problems.
+  </p>
+  <div class="hero-links">
+    <button class="btn btn-primary" onclick="showSection('projects')">View projects</button>
+    <button class="btn btn-ghost" onclick="showSection('blog')">Read the blog</button>
+  </div>
+  <div class="divider"></div>
+  <p style="font-family: var(--mono); font-size: 12px; font-weight: 300; color: var(--ink-3); letter-spacing: 0.06em;">
+    Based in Berlin &nbsp;·&nbsp; Open to collaborations
+  </p>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="sec-about">
+  <h2>About</h2>
+  <p class="about-text">
+    I'm a <strong>software developer and student</strong> based in Berlin. I'm drawn to clean systems, well-crafted interfaces, and understanding how things work at a fundamental level.
+  </p>
+  <p class="about-text">
+    When I'm not writing code, I'm usually reading, thinking through problems, or writing about whatever I've been learning lately. This site is where I document that journey.
+  </p>
+  <p class="about-text">
+    I care about building things that are <strong>simple, intentional, and useful</strong> — in code and in life.
+  </p>
+  <div class="tag-row">
+    <span class="tag">TypeScript</span>
+    <span class="tag">Python</span>
+    <span class="tag">React</span>
+    <span class="tag">Node.js</span>
+    <span class="tag">SQL</span>
+    <span class="tag">Linux</span>
+    <span class="tag">Git</span>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="sec-blog">
+  <h2>Writing</h2>
+  <div class="post-list">
+    <div class="post-item" onclick="showPost('post1')">
+      <span class="post-date">Mar 2025</span>
+      <span class="post-title">What I learned building my first CLI tool</span>
+      <span class="post-arrow">→</span>
+    </div>
+    <div class="post-item" onclick="showPost('post2')">
+      <span class="post-date">Feb 2025</span>
+      <span class="post-title">On reading documentation properly</span>
+      <span class="post-arrow">→</span>
+    </div>
+    <div class="post-item" onclick="showPost('post3')">
+      <span class="post-date">Jan 2025</span>
+      <span class="post-title">Why I switched from VS Code to Neovim (and back)</span>
+      <span class="post-arrow">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- POST VIEW -->
+<div class="post-view" id="post-view">
+  <button class="post-back" onclick="backToBlog()">← back to writing</button>
+  <div class="post-date-meta" id="pv-date"></div>
+  <h1 id="pv-title"></h1>
+  <div class="post-body" id="pv-body"></div>
+</div>
+
+<!-- PROJECTS -->
+<section class="projects" id="sec-projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-name">devlog</span>
+        <span class="project-badge">open source</span>
+      </div>
+      <p class="project-desc">A minimal CLI tool for keeping a daily developer log. Stores entries as markdown files, searchable from the terminal.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">Click</span>
+        <span class="stack-tag">Markdown</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-name">budgetmap</span>
+        <span class="project-badge">in progress</span>
+      </div>
+      <p class="project-desc">A simple personal finance tracker with a clean web interface. No subscriptions, no cloud. Just a local SQLite database and a React frontend.</p>
+      <div class="project-stack">
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">TypeScript</span>
+        <span class="stack-tag">SQLite</span>
+        <span class="stack-tag">Fastify</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-name">this site</span>
+        <span class="project-badge">live</span>
+      </div>
+      <p class="project-desc">My personal website and blog. Pure HTML and CSS, hosted on GitHub Pages. No frameworks, no build step, no nonsense.</p>
+      <div class="project-stack">
+        <span class="stack-tag">HTML</span>
+        <span class="stack-tag">CSS</span>
+        <span class="stack-tag">GitHub Pages</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="sec-contact">
+  <h2>Contact</h2>
+  <p class="contact-intro">
+    I'm always open to interesting conversations, collaborations, or just a good question. Reach out through any of the channels below.
+  </p>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:hello@tarikarslan.online">
+      <span class="cl-platform">email</span>
+      <span class="cl-label">hello@tarikarslan.online</span>
+      <span class="cl-arrow">↗</span>
+    </a>
+    <a class="contact-link" href="https://github.com/tarikarslan" target="_blank">
+      <span class="cl-platform">github</span>
+      <span class="cl-label">github.com/tarikarslan</span>
+      <span class="cl-arrow">↗</span>
+    </a>
+    <a class="contact-link" href="https://linkedin.com/in/tarikarslan" target="_blank">
+      <span class="cl-platform">linkedin</span>
+      <span class="cl-label">linkedin.com/in/tarikarslan</span>
+      <span class="cl-arrow">↗</span>
+    </a>
+    <a class="contact-link" href="https://twitter.com/tarikarslan" target="_blank">
+      <span class="cl-platform">twitter/x</span>
+      <span class="cl-label">@tarikarslan</span>
+      <span class="cl-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<script>
+const posts = {
+  post1: {
+    date: 'March 2025',
+    title: 'What I learned building my first CLI tool',
+    body: `<p>Building a command-line tool seemed simple at first. You write a script, you run it, done. But when I decided to make something I'd actually use every day, the complexity crept in fast.</p><p>The first lesson was about <strong>interface design</strong>. Even for a CLI, the API you expose matters. How do flags compose? What happens when someone passes conflicting options? These aren't glamorous questions but they're the difference between a tool you reach for and one you abandon.</p><p>I used <code>Click</code> for Python, which made argument parsing painless. But the real work was in the edge cases — what happens when a file doesn't exist, when the user's editor isn't set, when a log entry is empty. Error messages should be helpful, not cryptic.</p><p>The second lesson: <strong>ship early</strong>. I used the tool half-built for two weeks and that forced me to prioritise. Features I thought were essential turned out not to matter. One I hadn't planned became the most useful part.</p><p>The code is on GitHub if you want to look at it. It's not perfect but it's mine, and I use it every day.</p>`
+  },
+  post2: {
+    date: 'February 2025',
+    title: 'On reading documentation properly',
+    body: `<p>I used to read documentation the way I'd read a novel — front to back, trying to absorb everything before writing a line of code. This was slow and mostly useless.</p><p>The better approach, which took me an embarrassingly long time to figure out: <strong>read documentation like a reference, not a story</strong>. You need a mental map of what exists, not a detailed memory of every parameter.</p><p>The pattern I use now is to skim the top-level structure first — what are the main concepts, what are the key nouns? Then I look at a few examples to understand the shape of things. After that I go build, and I come back to the docs when I'm stuck or uncertain.</p><p>The docs aren't there to teach you everything upfront. They're there so you can find the answer when you need it. That's a different relationship with the material.</p>`
+  },
+  post3: {
+    date: 'January 2025',
+    title: 'Why I switched from VS Code to Neovim (and back)',
+    body: `<p>Last autumn I spent three weeks configuring Neovim. I read blog posts, watched videos, copied dotfiles, fought with LSP configurations. By the end I had a setup I was genuinely proud of and mildly terrified of breaking.</p><p>I used it for about two months. My typing speed went up, my mouse usage went down. I felt productive in a way that felt almost physical — every edit was a keystroke problem to solve.</p><p>Then I started a group project. My teammates were all on VS Code. Pair programming meant constant context switching. Live Share didn't work over SSH the way I needed it to. Small friction accumulated.</p><p>I went back to VS Code. I kept the Vim keybindings via the extension, which turns out to give you 90% of the benefit with none of the configuration overhead.</p><p><strong>The lesson wasn't that Neovim is bad</strong>. It's excellent. The lesson is that the best tool is shaped by context — your team, your workflow, your constraints — not by what's technically superior in isolation.</p>`
+  }
+};
+
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById('post-view').classList.remove('active');
+  const sec = document.getElementById('sec-' + id);
+  if (sec) sec.classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+}
+
+function showPost(id) {
+  const post = posts[id];
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById('post-view').classList.add('active');
+  document.getElementById('pv-date').textContent = post.date;
+  document.getElementById('pv-title').textContent = post.title;
+  document.getElementById('pv-body').innerHTML = post.body;
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('nav-blog').classList.add('active');
+}
+
+function backToBlog() {
+  document.getElementById('post-view').classList.remove('active');
+  showSection('blog');
+}
+</script>
+</body>
+</html>
