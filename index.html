@@ -389,19 +389,9 @@
 <section class="blog" id="sec-blog">
   <h2>Writing</h2>
   <div class="post-list">
-    <div class="post-item" onclick="showPost('post1')">
-      <span class="post-date">Mar 2025</span>
-      <span class="post-title">What I learned building my first CLI tool</span>
-      <span class="post-arrow">→</span>
-    </div>
-    <div class="post-item" onclick="showPost('post2')">
-      <span class="post-date">Feb 2025</span>
-      <span class="post-title">On reading documentation properly</span>
-      <span class="post-arrow">→</span>
-    </div>
-    <div class="post-item" onclick="showPost('post3')">
-      <span class="post-date">Jan 2025</span>
-      <span class="post-title">Why I switched from VS Code to Neovim (and back)</span>
+    <div class="post-item" onclick="window.location='posts/war-games-black-swans.html'">
+      <span class="post-date">Apr 2026</span>
+      <span class="post-title">War Games, Black Swans, and the Art of Thinking in Systems</span>
       <span class="post-arrow">→</span>
     </div>
   </div>
@@ -418,45 +408,7 @@
 <!-- PROJECTS -->
 <section class="projects" id="sec-projects">
   <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="project-card">
-      <div class="project-card-top">
-        <span class="project-name">devlog</span>
-        <span class="project-badge">open source</span>
-      </div>
-      <p class="project-desc">A minimal CLI tool for keeping a daily developer log. Stores entries as markdown files, searchable from the terminal.</p>
-      <div class="project-stack">
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">Click</span>
-        <span class="stack-tag">Markdown</span>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-card-top">
-        <span class="project-name">budgetmap</span>
-        <span class="project-badge">in progress</span>
-      </div>
-      <p class="project-desc">A simple personal finance tracker with a clean web interface. No subscriptions, no cloud. Just a local SQLite database and a React frontend.</p>
-      <div class="project-stack">
-        <span class="stack-tag">React</span>
-        <span class="stack-tag">TypeScript</span>
-        <span class="stack-tag">SQLite</span>
-        <span class="stack-tag">Fastify</span>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-card-top">
-        <span class="project-name">this site</span>
-        <span class="project-badge">live</span>
-      </div>
-      <p class="project-desc">My personal website and blog. Pure HTML and CSS, hosted on GitHub Pages. No frameworks, no build step, no nonsense.</p>
-      <div class="project-stack">
-        <span class="stack-tag">HTML</span>
-        <span class="stack-tag">CSS</span>
-        <span class="stack-tag">GitHub Pages</span>
-      </div>
-    </div>
-  </div>
+  <p class="about-text">Coming soon.</p>
 </section>
 
 <!-- CONTACT -->
@@ -495,16 +447,6 @@ const posts = {
     date: 'March 2025',
     title: 'What I learned building my first CLI tool',
     body: `<p>Building a command-line tool seemed simple at first. You write a script, you run it, done. But when I decided to make something I'd actually use every day, the complexity crept in fast.</p><p>The first lesson was about <strong>interface design</strong>. Even for a CLI, the API you expose matters. How do flags compose? What happens when someone passes conflicting options? These aren't glamorous questions but they're the difference between a tool you reach for and one you abandon.</p><p>I used <code>Click</code> for Python, which made argument parsing painless. But the real work was in the edge cases — what happens when a file doesn't exist, when the user's editor isn't set, when a log entry is empty. Error messages should be helpful, not cryptic.</p><p>The second lesson: <strong>ship early</strong>. I used the tool half-built for two weeks and that forced me to prioritise. Features I thought were essential turned out not to matter. One I hadn't planned became the most useful part.</p><p>The code is on GitHub if you want to look at it. It's not perfect but it's mine, and I use it every day.</p>`
-  },
-  post2: {
-    date: 'February 2025',
-    title: 'On reading documentation properly',
-    body: `<p>I used to read documentation the way I'd read a novel — front to back, trying to absorb everything before writing a line of code. This was slow and mostly useless.</p><p>The better approach, which took me an embarrassingly long time to figure out: <strong>read documentation like a reference, not a story</strong>. You need a mental map of what exists, not a detailed memory of every parameter.</p><p>The pattern I use now is to skim the top-level structure first — what are the main concepts, what are the key nouns? Then I look at a few examples to understand the shape of things. After that I go build, and I come back to the docs when I'm stuck or uncertain.</p><p>The docs aren't there to teach you everything upfront. They're there so you can find the answer when you need it. That's a different relationship with the material.</p>`
-  },
-  post3: {
-    date: 'January 2025',
-    title: 'Why I switched from VS Code to Neovim (and back)',
-    body: `<p>Last autumn I spent three weeks configuring Neovim. I read blog posts, watched videos, copied dotfiles, fought with LSP configurations. By the end I had a setup I was genuinely proud of and mildly terrified of breaking.</p><p>I used it for about two months. My typing speed went up, my mouse usage went down. I felt productive in a way that felt almost physical — every edit was a keystroke problem to solve.</p><p>Then I started a group project. My teammates were all on VS Code. Pair programming meant constant context switching. Live Share didn't work over SSH the way I needed it to. Small friction accumulated.</p><p>I went back to VS Code. I kept the Vim keybindings via the extension, which turns out to give you 90% of the benefit with none of the configuration overhead.</p><p><strong>The lesson wasn't that Neovim is bad</strong>. It's excellent. The lesson is that the best tool is shaped by context — your team, your workflow, your constraints — not by what's technically superior in isolation.</p>`
   }
 };
 
