@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>War Games, Black Swans, and the Art of Thinking in Systems - Tarik Arslan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f9f7f4;
+    --ink: #1a1915;
+    --ink-2: #5a5750;
+    --ink-3: #9a9590;
+    --accent: #c17f4a;
+    --border: #e0dbd3;
+    --serif: 'Lora', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  nav a {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--ink); }
+  .wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 48px 80px;
+  }
+  .date {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--border);
+  }
+  p { color: var(--ink-2); margin-bottom: 22px; }
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  blockquote {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin: 30px 0;
+    color: var(--ink);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">← back to writing</a>
+  </nav>
+  <main class="wrap">
+    <div class="date">APRIL 2026</div>
+    <h1>War Games, Black Swans, and the Art of Thinking in Systems</h1>
+
+    <p>In 1962, the US ran classified Sigma war games to model escalation in Vietnam. Across multiple rounds and setups, the simulations repeatedly forecast the same destination: prolonged conflict, rising troop commitments, and domestic political strain.</p>
+    <p>The signal was not subtle. The games pointed to structural dynamics, not a single tactical mistake. But the findings were minimized, in part because they relied on human behavior and incentive responses that some decision-makers considered too "soft" compared with purely quantitative models.</p>
+
+    <h2>The point of simulation</h2>
+    <p>A model does not have to be perfect to be useful. Its value is often diagnostic: when outputs diverge from your expectations, that mismatch exposes weaknesses in your assumptions. The question is not "Is this exact?" but "What does this reveal about what I am missing?"</p>
+    <blockquote>The simulation is useful not because it predicts precisely, but because it stress-tests your mental model.</blockquote>
+
+    <h2>Why this matters now</h2>
+    <p>Modern decisions are made inside dense, interconnected systems. Governments, markets, energy flows, policy shifts, and social behavior all interact in parallel. No individual can track every variable with equal depth, and that is where blind spots emerge.</p>
+    <p>System-level simulation helps expose fragility before reality does. You still need human judgment, domain expertise, and context. But structured interaction models can reveal second-order effects that single-actor thinking misses.</p>
+
+    <h2>Black swans and humility</h2>
+    <p>No model captures everything. Truly out-of-frame shocks will still happen. The goal is not omniscience; it is reducing avoidable surprise and identifying where you are most exposed when conditions change.</p>
+    <p>In that sense, the practical output of good simulation is less "the future" and more a map of vulnerabilities, leverage points, and assumptions that need revision.</p>
+
+    <p><em>Full long-form version and references will be updated here.</em></p>
+  </main>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>War Games, Black Swans, and the Art of Thinking in Systems — Tarik Arslan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f9f7f4;
+    --surface: #f2efe9;
+    --ink: #1a1915;
+    --ink-2: #5a5750;
+    --ink-3: #9a9590;
+    --accent: #c17f4a;
+    --accent-light: #e8d5bf;
+    --border: #e0dbd3;
+    --serif: 'Lora', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--ink); }
+
+  /* POST LAYOUT */
+  .post-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 48px 96px;
+  }
+
+  .post-back {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 56px;
+    transition: color 0.15s;
+    text-decoration: none;
+  }
+  .post-back:hover { color: var(--accent); }
+
+  .post-date-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .post-title {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 40px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* BODY TYPOGRAPHY */
+  .post-body {
+    font-size: 17px;
+    color: var(--ink-2);
+    line-height: 1.9;
+  }
+
+  .post-body p {
+    margin-bottom: 28px;
+  }
+
+  .post-body strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .post-body em {
+    font-style: italic;
+  }
+
+  /* Section headings */
+  .post-body h2 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-top: 52px;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Pull quote / highlight */
+  .post-body blockquote {
+    border-left: 2px solid var(--accent);
+    margin: 40px 0;
+    padding: 4px 0 4px 28px;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+
+  /* Footnote refs inline */
+  .post-body sup {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    vertical-align: super;
+    margin-left: 1px;
+  }
+
+  /* REFERENCES */
+  .references {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .references h3 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .references ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .references li {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--ink-3);
+    line-height: 1.6;
+  }
+
+  .ref-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--accent);
+    min-width: 20px;
+    padding-top: 2px;
+  }
+
+  .references a {
+    color: var(--ink-3);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    transition: color 0.15s;
+  }
+  .references a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    nav { padding: 0 20px; }
+    .nav-links { gap: 20px; }
+    .post-wrap { padding: 48px 24px 72px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">ta<span>.</span>online</a>
+  <div class="nav-links">
+    <a href="../index.html">home</a>
+    <a href="../index.html#about">about</a>
+    <a href="../index.html" class="active">blog</a>
+    <a href="../index.html#projects">projects</a>
+    <a href="../index.html#contact">contact</a>
+  </div>
+</nav>
+
+<div class="post-wrap">
+  <a class="post-back" href="../index.html">← back to writing</a>
+
+  <div class="post-date-meta">April 2026</div>
+
+  <h1 class="post-title">War Games, Black Swans, and the Art of Thinking in Systems</h1>
+
+  <div class="post-body">
+
+    <p>In 1962, a group of senior US officials filed into classified rooms in the basement of the Pentagon. They were assigned roles: the US government, North Vietnam, China, the Soviet Union, the Viet Cong. Each team pursued its own objectives, responded to the others' moves, and watched the scenario unfold across multiple rounds.</p>
+
+    <p>The simulation concluded with 500,000 American troops locked in a stalemate, and conscription riots in the streets of US cities. It was 1962. The actual war wouldn't reach that point for another five years.</p>
+
+    <p>The Sigma war games<sup>[1]</sup> ran from 1962 to 1967. Over and over again, across different scenarios, different players, different rule sets, the simulation returned the same result: strategic bombing would fail, the war would drag on, and domestic opinion would collapse. The Marines landed at Da Nang almost exactly when the model said they would. The troop numbers climbed almost exactly as projected.</p>
+
+    <p>None of it made it to President Johnson's desk.</p>
+
+    <p>Robert McNamara rejected the findings. His objection was revealing: the games placed too much weight on human decision-making, too much on motivation and perception and political will. In his view, human behavior was a variable too soft to trust. He pushed for something more scientific, more computational, where hard numbers replaced judgment calls.<sup>[1][2][3]</sup> He got his precision. And the US walked into exactly the quagmire the simulation had warned about.</p>
+
+    <h2>The Mismatch Is the Message</h2>
+
+    <p>The instinct to dismiss models as "too simplified" is understandable. It's also, in a specific way, backwards.</p>
+
+    <p>A friend of mine works in microelectronics engineering. He once told me that his team used complex physics modeling throughout their development process, but never to make decisions directly. The model was too simplified for that, and they knew it. What it was genuinely useful for was something subtler. When the model's output matched their real-world measurements, they felt confident their understanding of the system was solid. When it didn't — when the simulation threw up a surprise — that mismatch was the actual finding. It meant something in their mental model was wrong. A missing variable. A misunderstood relationship. An assumption nobody had thought to question.</p>
+
+    <blockquote>The simulation wasn't valuable because it was accurate. It was valuable because it was diagnostic.</blockquote>
+
+    <p>This is exactly what the Sigma games were doing, and exactly what McNamara missed. The war game wasn't claiming to be a perfect replica of Vietnam. It was a structured way of asking: given what we know about each actor's incentives and likely responses, what happens when we run this forward? The right response wasn't "is this model precise enough?" It was "what is this telling us about our assumptions?"</p>
+
+    <h2>The Complexity Gap</h2>
+
+    <p>Human cognition is well-suited to tracking a small number of actors across a small number of variables. We build mental models, update them with new information, and draw conclusions. For most of history, that was enough.</p>
+
+    <p>It isn't anymore.</p>
+
+    <p>A single geopolitical event today is the output of dozens of actors: governments, central banks, energy blocs, corporations, diaspora populations. Each operating under their own constraints, each responding to what the others do, each capable of producing outcomes that none of them individually intended. The causal chains don't run in sequence. They run in parallel, feed back on themselves, and interact in ways that only become visible after they've already resolved.</p>
+
+    <p>This isn't a failure of expertise. The most seasoned people in any room are working with the same cognitive hardware everyone else is. The problem is structural: the system has grown more complex faster than any individual mind can track. Someone with deep expertise in one relationship (US-China trade, or Gulf energy dynamics) will necessarily be modeling the other thirty variables at low resolution. Not because they're not good enough. Because nobody is.</p>
+
+    <p>The result is a specific kind of blind spot: you don't know what you don't know. The variable you're not tracking is, by definition, the one you won't see coming.</p>
+
+    <h2>What You're Actually Looking For</h2>
+
+    <p>It doesn't give you the future. It gives you a map of the interaction space: what happens when these actors respond to each other under these conditions.</p>
+
+    <p>Run it enough times, vary the assumptions, and something useful emerges: not a prediction, but a picture of where your thinking has gaps.</p>
+
+    <p>Where does the simulation keep surprising you? That's where your assumptions are wrong. Where do all the runs converge on the same outcome regardless of how you vary the inputs? That's where the structural logic of the situation is stronger than any individual actor's choices. Where do small changes in one actor's behavior produce dramatically different outcomes downstream? That's where the leverage is, and where the risk is hiding.</p>
+
+    <p>This is what the Sigma games were producing, round after round, and what went unread. Not a forecast. A stress test. A way of discovering, before the fact, that the mental model you're operating with has a hole in it.</p>
+
+    <h2>Kriegsspiel Was Never About Replacing Generals</h2>
+
+    <p>None of this replaces the human in the loop. It couldn't, and it shouldn't try.</p>
+
+    <p>Deep domain knowledge isn't replicable by a model. The judgment, the context, the feel for what a particular actor will and won't do under pressure: that lives in people, not in any simulation. What the simulation provides is the connective tissue between those islands of expertise. Someone who knows one piece of the puzzle deeply but is tracking everything else at low resolution now has a structured way to see how those systems interact, and where the interaction produces something no single perspective would have caught alone.</p>
+
+    <p>Militaries understood this centuries ago. Kriegsspiel,<sup>[3][4]</sup> the Prussian war game introduced in 1811 and widely credited with shaping Prussian military dominance through the rest of the century, wasn't designed to produce battle plans. It was designed to train officers to think in systems, to internalize how an adversary responds, to surface the gaps in their own reasoning before those gaps became casualties. One Prussian field marshal, introduced to it in 1824, declared it wasn't a game at all. It was a school of war.</p>
+
+    <p>The insight has been there for two hundred years. What's changed is the scale of the problem, and the tools available to meet it. And crucially, the problem itself has long outgrown the battlefield.</p>
+
+    <h2>This Isn't Just a Military Problem</h2>
+
+    <p>The same interaction dynamics play out in finance, supply chains, policy, and humanitarian work every single day, at lower temperature but no less consequence.</p>
+
+    <p>A central bank raises rates. That changes the calculus for an energy exporter. Which shifts the political pressure on a government trying to hold a currency peg. Which ripples into the bond market of a country on the other side of the world. No single person is tracking all four of those relationships simultaneously at depth, but all four are connected, and the connection is where the surprise lives.</p>
+
+    <p>An investor trying to position a portfolio ahead of a policy shift, a corporation mapping supply chain fragility before it becomes a crisis, an NGO trying to pre-position resources before a displacement wave peaks: none of these are war problems. All of them are interaction problems. All of them involve actors with different incentives responding to each other in ways that compound and surprise.</p>
+
+    <p>The question the Sigma games were asking in the basement of the Pentagon is the same question a fund manager, a supply chain strategist, or a policy team should be asking today: not "what will Actor A do?" but "what happens when Actors A, B, C, and D all respond to each other at once, and what does that mean for me, specifically?"</p>
+
+    <h2>On Black Swans and the Limits of Any Model</h2>
+
+    <p>There's an obvious objection to everything written above, and it's worth sitting with before dismissing it. All of this assumes you know what to put in the simulation. You pick the actors, you define their incentives, you choose the scenario. But what about the thing you didn't think to include? What about the event that arrives from completely outside the frame, the one that makes every scenario you run look quaint in retrospect?</p>
+
+    <p>This is Nassim Taleb's life work.<sup>[5]</sup> He spent a career arguing that the events that matter most are precisely the ones our models don't see coming, that we build our mental maps from what has already happened, and then act surprised when reality delivers something the map didn't include. That the very act of modeling can create a false sense of coverage, a dangerous confidence that because you've thought about the system, you understand it.</p>
+
+    <p>He's right. And anyone building or using a simulation tool should keep that uncomfortable fact close.</p>
+
+    <p>No scenario covers everything. The truly dangerous surprises — the ones that reshape the board entirely — are by definition outside the frame of whatever you thought to model. A simulation can't save you from what nobody in the room thought to put in it.</p>
+
+    <p>But there's a distinction worth drawing. Taleb's prescription isn't paralysis, it's building for robustness. His argument in <em>Antifragile</em><sup>[6]</sup> isn't that you stop trying to understand the system. It's that you stop pretending your understanding is complete, and start asking instead: where am I fragile? Where does a surprise, of whatever kind, break me? That's a different question from "what will happen?" and it's a much more useful one.</p>
+
+    <p>That's exactly what running interactions gives you. Not a forecast. A fragility map. You find out where your position, your supply chain, your policy assumption, your portfolio breaks down — not by waiting for reality to run the test, but by running it yourself first, with enough time to do something about it.</p>
+
+    <p>You won't catch every Black Swan. But you can spend less of your life being surprised by the interactions you could have seen coming, if only you'd had a structured way to look. The goal isn't omniscience. It's shrinking the space of what you're blindly exposed to, and turning at least some of what felt like fate into something you had a chance to prepare for.</p>
+
+    <h2>The Question That Hasn't Changed</h2>
+
+    <p>McNamara had the right question and chose the wrong way to answer it. Every institution that has the tools to think in systems but defaults to single-actor analysis makes the same trade: clarity over completeness, confidence over accuracy. It's easier to ask "what will China do?" than to sit with the discomfort of "what happens when China, the Fed, three energy exporters, and a domestic political crisis all respond to each other simultaneously, and what does that leave me exposed to?"</p>
+
+    <p>For a long time, the honest answer was: we don't have a good way to ask that second question systematically. Running it in your head means losing threads. Running it in a room full of people means politics, groupthink, and someone telling everyone the model is biased.</p>
+
+    <p>Something has changed.</p>
+
+    <p>Large language models can now be configured to reason as specific actors with defined goals, constraints, histories, and decision rules. Not as a chatbot answering questions, but as an agent pursuing objectives, responding to pressure, making moves. And when you put several of those agents in the same environment and let them interact, each one responding to what the others do across multiple rounds, something genuinely interesting starts to happen. Behavior emerges that none of the individual actors would have produced alone. Surprises surface. Assumptions get stress-tested not by a human poking at them, but by the logic of the interactions themselves.<sup>[7]</sup></p>
+
+    <p>This is not a solved problem. Getting agents to reason faithfully as complex geopolitical actors, to respond to each other in ways that reflect real incentive structures rather than plausible-sounding noise — that's hard, and anyone who tells you it's easy hasn't tried it seriously. But the gap between where the technology is today and where it needs to be to make this genuinely useful is smaller than it has ever been. And it is closing fast.</p>
+
+    <p>The Sigma games needed forty-five staff members, weeks of preparation, and a room full of senior officials willing to spend days playing out a scenario. That was the cost of thinking in systems in 1964. The infrastructure required to do something equivalent — faster, continuously, at scale, and translated into decisions you can actually act on — now fits in a laptop.</p>
+
+    <blockquote>McNamara's mistake wasn't that he had the wrong tools. It was that he had the right question and chose the wrong way to answer it.</blockquote>
+
+    <p>The question of what happens when all these actors respond to each other, and what that means for you, hasn't changed. The tools to answer it finally have.</p>
+
+    <p><em>We're building something. More soon.</em></p>
+
+  </div>
+
+  <div class="references">
+    <h3>References</h3>
+    <ol>
+      <li>
+        <span class="ref-num">[1]</span>
+        <span>The Sigma War Games (1962–1967). War on the Rocks, "The Wargames That Prophesized America's Defeat in Vietnam" (2024): <a href="https://warontherocks.com/2024/09/the-wargames-that-prophesized-americas-defeat-in-vietnam/" target="_blank">warontherocks.com</a></span>
+      </li>
+      <li>
+        <span class="ref-num">[2]</span>
+        <span>Schneider, Jacquelyn. "What War Games Really Reveal." Foreign Affairs, 2024: <a href="https://www.foreignaffairs.com/united-states/what-war-games-really-reveal" target="_blank">foreignaffairs.com</a></span>
+      </li>
+      <li>
+        <span class="ref-num">[3]</span>
+        <span>"Why America's Leaders Ignored Shockingly Prescient Sigma War Games On Vietnam." Hoover Institution, 2024: <a href="https://www.hoover.org/news/why-americas-leaders-ignored-shockingly-prescient-sigma-war-games-vietnam" target="_blank">hoover.org</a></span>
+      </li>
+      <li>
+        <span class="ref-num">[4]</span>
+        <span>Kriegsspiel, Military Simulation. Wikipedia: <a href="https://en.wikipedia.org/wiki/Military_simulation" target="_blank">wikipedia.org</a></span>
+      </li>
+      <li>
+        <span class="ref-num">[5]</span>
+        <span>Taleb, Nassim Nicholas. <em>The Black Swan: The Impact of the Highly Improbable.</em> Random House, 2007.</span>
+      </li>
+      <li>
+        <span class="ref-num">[6]</span>
+        <span>Taleb, Nassim Nicholas. <em>Antifragile: Things That Gain from Disorder.</em> Random House, 2012.</span>
+      </li>
+      <li>
+        <span class="ref-num">[7]</span>
+        <span>Park, J.S. et al. "Generative Agents: Interactive Simulacra of Human Behavior." Stanford / Google DeepMind, 2023: <a href="https://arxiv.org/abs/2304.03442" target="_blank">arxiv.org</a></span>
+      </li>
+    </ol>
+  </div>
+
+</div>
+
+</body>
+</html>
