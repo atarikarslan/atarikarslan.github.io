@@ -88,6 +88,14 @@
     letter-spacing: -0.02em;
     margin-bottom: 24px;
   }
+  .hero-greeting {
+    display: inline-block;
+    min-width: 1ch;
+    transition: opacity 0.8s ease;
+  }
+  .hero-greeting.fade-out {
+    opacity: 0;
+  }
   .hero h1 em { font-style: italic; color: var(--ink-2); }
   .hero-bio {
     font-size: 17px;
@@ -348,7 +356,7 @@
 <!-- HOME -->
 <section class="hero active" id="sec-home">
   <div class="hero-eyebrow">software developer · student</div>
-  <h1>Hi, I'm<br><em>Tarik Arslan.</em></h1>
+  <h1><span id="hero-greeting" class="hero-greeting">Hi</span>, I'm<br><em>Tarik Arslan.</em></h1>
   <p class="hero-bio">
     I build things with code and write about what I learn along the way. Currently studying and exploring the space where software meets real problems.
   </p>
@@ -474,6 +482,21 @@ function showPost(id) {
 function backToBlog() {
   document.getElementById('post-view').classList.remove('active');
   showSection('blog');
+}
+
+const greetings = ['Hi', 'Hallo', 'Merhaba'];
+let greetingIndex = 0;
+const greetingEl = document.getElementById('hero-greeting');
+
+if (greetingEl) {
+  setInterval(() => {
+    greetingEl.classList.add('fade-out');
+    setTimeout(() => {
+      greetingIndex = (greetingIndex + 1) % greetings.length;
+      greetingEl.textContent = greetings[greetingIndex];
+      greetingEl.classList.remove('fade-out');
+    }, 800);
+  }, 8000);
 }
 </script>
 </body>
